@@ -39,6 +39,7 @@ public class SellerDetailsController {
 
     @PostMapping("/addsellerdetails")
     public SellerDetails createNewSellerDetailsEntry(@RequestBody SellerDetails sellerdetail){
+        sellerdetail.setId(null);
         return sellerservice.createNewSellerDetails(sellerdetail);
     }
 
