@@ -4,6 +4,7 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { SellerlistComponent } from './pages/sellerlist/sellerlist.component';
 import { VerkaufsprogrammComponent } from './pages/verkaufsprogramm/verkaufsprogramm.component';
 import { BuchfuehrungComponent } from './pages/buchfuehrung/buchfuehrung.component';
+import { AddsellerComponent } from './pages/addseller/addseller.component';
 
 export const routes: Routes = [
     {
@@ -20,5 +21,8 @@ export const routes: Routes = [
     },
     {
         path: 'accounting', component: BuchfuehrungComponent
-    }
+    },
+    {
+        path: 'addseller', component: AddsellerComponent
+    },
 ];

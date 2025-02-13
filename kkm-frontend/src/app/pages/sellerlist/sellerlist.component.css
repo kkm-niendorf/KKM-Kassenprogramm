@@ -8,3 +8,31 @@
     flex-direction: row;
     margin: auto;
 }
+
+mat-table {
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  mat-header-cell, mat-cell {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  mat-header-row {
+    background-color: #f4f4f4;
+  }
+  
+  .mat-elevation-z8 {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  .email-cell {
+    display: inline-block;
+    max-width: 150px; /* Anpassen je nach Bedarf */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  

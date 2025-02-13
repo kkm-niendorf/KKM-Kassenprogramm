@@ -1,0 +1,27 @@
+/* Styling für die Formulardaten */
+.form-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  .seller-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-form-field {
+    margin-bottom: 16px;
+  }
+  
+  .submit-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  button:disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+  }
+  

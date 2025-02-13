@@ -7,4 +7,86 @@
         <button mat-menu-item (click)="navigateTo('/accounting')">Buchführung</button>
       </mat-menu>
     <span class="app-title">KKM-Kassen System</span>
+    <button mat-icon-button class="example-icon" (click)="navigateTo('/addseller')"><mat-icon>add</mat-icon></button>
   </mat-toolbar>
+
+  <mat-table [dataSource]="datasource" class="mat-elevation-z8">
+  
+    <!-- Vorname -->
+    <ng-container matColumnDef="Vorname">
+      <mat-header-cell *matHeaderCellDef> Vorname </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.firstname}} </mat-cell>
+    </ng-container>
+  
+    <!-- Nachname -->
+    <ng-container matColumnDef="Nachname">
+      <mat-header-cell *matHeaderCellDef> Nachname </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.lastname}} </mat-cell>
+    </ng-container>
+  
+    <!-- Straße -->
+    <ng-container matColumnDef="Straße">
+      <mat-header-cell *matHeaderCellDef> Straße </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.street}} </mat-cell>
+    </ng-container>
+  
+    <!-- Hausnummer -->
+    <ng-container matColumnDef="Nummer">
+      <mat-header-cell *matHeaderCellDef> Nummer </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.apartmentnumber}} </mat-cell>
+    </ng-container>
+  
+    <!-- Postleitzahl -->
+    <ng-container matColumnDef="Postleitzahl">
+      <mat-header-cell *matHeaderCellDef> Postleitzahl </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.postleitzahl}} </mat-cell>
+    </ng-container>
+  
+    <!-- Wohnort -->
+    <ng-container matColumnDef="Wohnort">
+      <mat-header-cell *matHeaderCellDef> Wohnort </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.city}} </mat-cell>
+    </ng-container>
+  
+    <!-- Email -->
+<ng-container matColumnDef="Email">
+  <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+  <mat-cell *matCellDef="let element">
+    <span class="email-cell" matTooltip="{{element.emailadress}}">
+      {{element.emailadress}}
+    </span>
+  </mat-cell>
+</ng-container>
+
+  
+    <!-- Telefonnummer -->
+    <ng-container matColumnDef="Telefonnummer">
+      <mat-header-cell *matHeaderCellDef> Telefonnummer </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.phonenumber}} </mat-cell>
+    </ng-container>
+  
+    <!-- Verkaufsnummer -->
+    <ng-container matColumnDef="Verkaufsnummer">
+      <mat-header-cell *matHeaderCellDef> VK-Nr. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.sellernumber}} </mat-cell>
+    </ng-container>
+  
+   <!-- Aktionen -->
+<ng-container matColumnDef="Aktionen">
+  <mat-header-cell *matHeaderCellDef> Aktionen </mat-header-cell>
+  <mat-cell *matCellDef="let element">
+    <button mat-icon-button color="primary" (click)="editSeller(element)">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button color="warn" (click)="deleteSeller(element.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-cell>
+</ng-container>
+
+<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+  
+  </mat-table>
+  
