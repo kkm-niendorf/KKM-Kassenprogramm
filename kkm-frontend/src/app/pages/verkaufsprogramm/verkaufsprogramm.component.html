@@ -8,3 +8,65 @@
       </mat-menu>
     <span class="app-title">KKM-Kassen System</span>
   </mat-toolbar>
+
+  <mat-card class="selling-card">
+    <mat-card-title>Verkauf erfassen</mat-card-title>
+    <mat-card-content>
+      <form (ngSubmit)="addSale()">
+        <mat-form-field class="full-width">
+          <mat-label>Verkäufernummer</mat-label>
+          <input type="text" matInput [matAutocomplete]="auto" [(ngModel)]="sale.sellernumber" name="sellernumber">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let seller of filteredSellers" [value]="seller.sellernumber">
+              {{ seller.sellernumber }} - {{ seller.firstname }} {{ seller.lastname }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        
+        
+  
+        <mat-form-field class="full-width">
+          <mat-label>Artikelpreis</mat-label>
+          <input matInput type="number" [(ngModel)]="sale.summaryprice" name="summaryprice" required>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit">Verkauf speichern</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  
+  <mat-card class="sale-card">
+    <mat-card-content>
+      <table mat-table [dataSource]="sales" class="mat-elevation-z8">
+  
+        <ng-container matColumnDef="sellernumber">
+          <th mat-header-cell *matHeaderCellDef> Verkäufernummer </th>
+          <td mat-cell *matCellDef="let sale"> {{ sale.sellernumber }} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="summaryprice">
+          <th mat-header-cell *matHeaderCellDef> Artikelpreis </th>
+          <td mat-cell *matCellDef="let sale"> {{ sale.summaryprice | currency:'EUR' }} </td>
+        </ng-container>
+  
+        <!-- Neue Spalte für Bearbeiten und Löschen -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Aktionen </th>
+          <td mat-cell *matCellDef="let sale">
+            <button mat-icon-button color="primary" (click)="editSale(sale)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteSale(sale.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+      </table>
+    </mat-card-content>
+  </mat-card>
+  
+  

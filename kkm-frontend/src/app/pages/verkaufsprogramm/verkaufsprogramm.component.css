@@ -8,3 +8,26 @@
     flex-direction: row;
     margin: auto;
 }
+
+
+.full-width {
+    width: 100%;
+  }
+  
+  .sale-card {
+    margin: 20px 0;
+  }
+  
+  .mat-icon-button {
+    margin-right: 10px;
+  }
+  
+  .selling-card{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    margin-top: 5rem;
+  }

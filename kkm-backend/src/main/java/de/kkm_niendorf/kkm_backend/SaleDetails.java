@@ -16,5 +16,5 @@ public class SaleDetails {
     @Id
     private String id;
     private String sellernumber;
-    private Integer summaryprice;
+    private String summaryprice;
 }

@@ -34,6 +34,7 @@ export class SellerlistComponent implements OnInit {
   updateSeller(element: SellerDetails) {
     this.sellerService.updateSeller(element.id, element).subscribe(() => {
       console.log('Daten erfolgreich aktualisiert.');
+      window.location.reload();
     });
   }
   

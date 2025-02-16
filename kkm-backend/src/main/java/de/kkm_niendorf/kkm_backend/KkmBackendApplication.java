@@ -9,5 +9,4 @@ public class KkmBackendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(KkmBackendApplication.class, args);
 	}
-
 }
