@@ -19,13 +19,9 @@ export class AddsellerComponent {
     id: '',
     firstname: '',
     lastname: '',
-    street: '',
-    apartmentnumber: 0,
-    postleitzahl: '',
-    city: '',
     emailadress: '',
     phonenumber: '',
-    sellernumber: 0
+    sellernumber: 0,
   };
 
   constructor(private sellerService: SellerService, private router: Router) {}

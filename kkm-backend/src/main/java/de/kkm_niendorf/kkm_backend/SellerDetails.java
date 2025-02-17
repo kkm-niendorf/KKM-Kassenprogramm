@@ -17,10 +17,6 @@ public class SellerDetails {
     private String id;
     private String firstname;
     private String lastname;
-    private String street;
-    private Integer apartmentnumber;
-    private String postleitzahl;
-    private String  city;
     private String emailadress;
     private String phonenumber;
     private Integer sellernumber;

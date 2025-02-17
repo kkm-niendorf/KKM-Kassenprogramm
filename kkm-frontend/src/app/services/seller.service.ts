@@ -7,10 +7,6 @@ export interface SellerDetails {
     id: string;
     firstname: string;
     lastname: string;
-    street: string;
-    apartmentnumber: number;
-    postleitzahl: string;
-    city: string;
     emailadress: string;
     phonenumber: string;
     sellernumber: number;

@@ -17,7 +17,7 @@ import { EditsellerdialogComponent } from '../../components/editsellerdialog/edi
 
 export class SellerlistComponent implements OnInit {
 
-  displayedColumns: string[] = ['Vorname', 'Nachname', 'Straße', 'Nummer', 'Postleitzahl', 'Wohnort', 'Email', 'Telefonnummer', 'Verkaufsnummer', 'Aktionen'];
+  displayedColumns: string[] = ['Vorname', 'Nachname', 'Email', 'Telefonnummer', 'Verkaufsnummer', 'Aktionen'];
   datasource: SellerDetails[] = [];
   constructor(private router: Router, private sellerService: SellerService, private dialog: MatDialog) {}
 

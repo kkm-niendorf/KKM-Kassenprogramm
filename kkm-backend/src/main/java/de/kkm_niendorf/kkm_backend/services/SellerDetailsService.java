@@ -33,10 +33,6 @@ public class SellerDetailsService {
         return sellerrepository.findById(id).map(existingSellerDetail -> {
             existingSellerDetail.setFirstname(updatedSellerDetails.getFirstname());
             existingSellerDetail.setLastname(updatedSellerDetails.getLastname());
-            existingSellerDetail.setStreet(updatedSellerDetails.getStreet());
-            existingSellerDetail.setApartmentnumber(updatedSellerDetails.getApartmentnumber());
-            existingSellerDetail.setPostleitzahl(updatedSellerDetails.getPostleitzahl());
-            existingSellerDetail.setCity(updatedSellerDetails.getCity());
             existingSellerDetail.setPhonenumber(updatedSellerDetails.getPhonenumber());
             existingSellerDetail.setEmailadress(updatedSellerDetails.getEmailadress());
             existingSellerDetail.setSellernumber(updatedSellerDetails.getSellernumber());
